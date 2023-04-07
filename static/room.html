@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ $.room.RoomName }} | Room</title>
+</head>
+<body>
+    <h2>Chattr Room [Active Room: {{ $.room.RoomName }}]</h2>
+    <h3>Room Id: {{ $.room.Id }} </h3>
+    <h4>Welcome {{ $.currentUser.Username }}</h4>
+
+    <div>
+        <textarea rows="25" cols="50" id="chatLog" disabled></textarea><br>
+        <input type="text" name="chatText">
+        <button id="sendButton">Send</button>
+    </div>
+
+    <script>
+        const roomId = '{{ $.room.Id }}';
+        const currentUser = '{{ $.currentUser.Username }}';
+    </script>
+    <script src="/static/room.js"></script>
+</body>
+</html>
